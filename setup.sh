@@ -14,6 +14,11 @@ fi
 
 yay -S steam-devices-git brave-bin --noconfirm
 
+# Configurando Flatpak e instalando PortProton
+echo "Configurando Flatpak e instalando PortProton..."
+flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+flatpak install flathub ru.linux_gaming.PortProton -y
+
 # Aplicando configurações
 echo "Aplicando configurações do Hyprland..."
 HYPR_DIR="$HOME/.config/hypr"

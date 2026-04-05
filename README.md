@@ -10,6 +10,11 @@ sudo pacman -S xorg-xhost hypridle hyprlock qbittorrent telegram-desktop discord
 
 # Pacotes do AUR (Yay)
 yay -S steam-devices-git brave-bin --noconfirm
+
+# Pacotes do Flatpak (PortProton)
+flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+flatpak install flathub ru.linux_gaming.PortProton -y
+
 # Ou execute o script de instalação automática:
 chmod +x setup.sh && ./setup.sh
 ```

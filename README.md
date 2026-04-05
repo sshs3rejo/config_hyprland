@@ -4,10 +4,14 @@ Repositório de configurações do meu ambiente Hyprland.
 
 ## Pré-requisitos
 
-Para que todos os comandos (especialmente o `xhost` no `execs.conf`) funcionem, é necessário instalar os seguintes pacotes:
-
 ```bash
-sudo pacman -S xorg-xhost hypridle hyprlock --noconfirm
+# Pacotes do sistema (Pacman)
+sudo pacman -S xorg-xhost hypridle hyprlock qbittorrent telegram-desktop discord flatpak bluez-obex nwg-look vlc vlc-plugins-all --noconfirm
+
+# Pacotes do AUR (Yay)
+yay -S steam-devices-git brave-bin --noconfirm
+# Ou execute o script de instalação automática:
+chmod +x setup.sh && ./setup.sh
 ```
 
 ## Estrutura Atual

@@ -19,21 +19,5 @@ echo "Configurando Flatpak e instalando PortProton..."
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 flatpak install flathub ru.linux_gaming.PortProton -y
 
-# Aplicando configurações
-echo "Aplicando configurações do Hyprland..."
-HYPR_DIR="$HOME/.config/hypr"
-mkdir -p "$HYPR_DIR/hyprland"
-
-# 1. Copiar hypridle.conf
-cp hypr/hypridle.conf "$HYPR_DIR/hypridle.conf"
-echo "Arquivo hypridle.conf aplicado em $HYPR_DIR/hypridle.conf"
-
-# 2. Copiar execs.conf
-cp hypr/hyprland/execs.conf "$HYPR_DIR/hyprland/execs.conf"
-echo "Arquivo execs.conf aplicado em $HYPR_DIR/hyprland/execs.conf"
-
-# 3. Copiar general.conf (Sobrescrever completo)
-cp hypr/hyprland/general.conf "$HYPR_DIR/hyprland/general.conf"
-echo "Arquivo general.conf aplicado em $HYPR_DIR/hyprland/general.conf"
-
-echo "Instalação e aplicação de configurações concluídas!"
+echo "Instalação de pacotes concluída!"
+echo "As configurações do Hyprland devem ser aplicadas manualmente conforme necessário."

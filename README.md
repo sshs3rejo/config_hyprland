@@ -15,9 +15,13 @@ yay -S steam-devices-git brave-bin --noconfirm
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 flatpak install flathub ru.linux_gaming.PortProton -y
 
-# Ou execute o script de instalação automática:
+# Execute o script de instalação automática de todos os pacotes (Pacman, AUR e Flatpak):
 chmod +x setup.sh && ./setup.sh
 ```
+
+## Aplicação das Configurações
+
+As configurações do Hyprland e Hypridle devem ser aplicadas **manualmente**, copiando os arquivos para a sua pasta `~/.config/hypr/`.
 
 ## Estrutura Atual
 

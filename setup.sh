@@ -2,7 +2,7 @@
 
 # Atualizando sistema e instalando pacotes via pacman
 echo "Instalando pacotes via pacman..."
-sudo pacman -S xorg-xhost hypridle hyprlock qbittorrent telegram-desktop discord flatpak bluez-obex nwg-look vlc vlc-plugins-all --noconfirm
+sudo pacman -S xorg-xhost hypridle hyprlock qbittorrent telegram-desktop discord flatpak bluez-obex nwg-look vlc vlc-plugins-all scrcpy --noconfirm
 
 # Instalando pacotes do AUR via yay
 echo "Instalando pacotes do AUR via yay..."
@@ -12,7 +12,7 @@ then
     exit 1
 fi
 
-yay -S steam-devices-git brave-bin --noconfirm
+yay -S steam-devices-git brave-bin antigravity ventoy-bin onlyoffice-bin --noconfirm
 
 # Configurando Flatpak e instalando PortProton
 echo "Configurando Flatpak e instalando PortProton..."

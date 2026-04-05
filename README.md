@@ -6,10 +6,10 @@ Repositório de configurações do meu ambiente Hyprland.
 
 ```bash
 # Pacotes do sistema (Pacman)
-sudo pacman -S xorg-xhost hypridle hyprlock qbittorrent telegram-desktop discord flatpak bluez-obex nwg-look vlc vlc-plugins-all --noconfirm
+sudo pacman -S xorg-xhost hypridle hyprlock qbittorrent telegram-desktop discord flatpak bluez-obex nwg-look vlc vlc-plugins-all scrcpy --noconfirm
 
 # Pacotes do AUR (Yay)
-yay -S steam-devices-git brave-bin --noconfirm
+yay -S steam-devices-git brave-bin antigravity ventoy-bin onlyoffice-bin --noconfirm
 
 # Pacotes do Flatpak (PortProton)
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo

@@ -11,10 +11,10 @@ O conteúdo deste repositório **é** o diretório `~/.config/hypr/custom`: a ba
 
 ```bash
 # Pacotes do sistema (Pacman)
-sudo pacman -S xorg-xhost hypridle hyprlock qbittorrent telegram-desktop discord flatpak bluez-obex nwg-look vlc vlc-plugins-all scrcpy --noconfirm
+sudo pacman -S less 7zip unrar zip unzip ark discover xorg-xhost hypridle hyprlock qbittorrent telegram-desktop discord flatpak bluez-obex nwg-look vlc vlc-plugins-all scrcpy --noconfirm
 
 # Pacotes do AUR (Yay)
-yay -S steam-devices-git brave-bin antigravity ventoy-bin onlyoffice-bin --noconfirm
+yay -S steam-devices-git brave-bin antigravity-ide ventoy-bin onlyoffice-bin --noconfirm
 
 # Flatpak (PortProton)
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo

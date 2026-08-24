@@ -21,7 +21,7 @@ flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.f
 flatpak install flathub ru.linux_gaming.PortProton -y
 ```
 
-> O `xorg-xhost` é necessário porque a base (`hyprland/execs.lua`) roda `xhost +local:root` no startup.
+> O `xorg-xhost` é necessário para o `xhost +local:root` executado no startup.
 
 ## Aplicação
 
@@ -40,7 +40,7 @@ O `rm` é preciso porque o dots-hyprland já cria templates em `custom/` no prim
 | --------------- | --------------------------------------------------------------------------- |
 | `general.lua`   | Input: teclado br/thinkpad/abnt2, mouse e touchpad                          |
 | `keybinds.lua`  | Keybinds próprios (inclui `CTRL+SUPER+ALT+/` para editar este arquivo)      |
-| `execs.lua`     | Comandos de inicialização adicionais (o `xhost +local:root` já vem da base) |
+| `execs.lua` | Comandos de inicialização (`xhost +local:root` p/ apps GTK/XWayland) |
 | `env.lua`       | Variáveis de ambiente                                                       |
 | `rules.lua`     | Regras de janela                                                            |
 | `variables.lua` | Variáveis do Hyprland                                                       |

@@ -6,5 +6,9 @@ hl.config({
         kb_layout  = "br",
         kb_variant = "thinkpad",
         kb_model   = "abnt2",
+
+        touchpad = {
+            natural_scroll = false,
+        }
     }
 })

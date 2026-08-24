@@ -11,10 +11,21 @@ O conteúdo deste repositório **é** o diretório `~/.config/hypr/custom`: a ba
 
 ```bash
 # Pacotes do sistema (Pacman)
-sudo pacman -S less 7zip unrar zip unzip ark discover xorg-xhost hypridle hyprlock qbittorrent telegram-desktop discord flatpak bluez-obex nwg-look vlc vlc-plugins-all scrcpy --noconfirm
+
+# Utilitários de arquivo
+sudo pacman -S --needed --noconfirm less 7zip unrar zip unzip ark discover
+
+# Terminal, rede e monitoramento
+sudo pacman -S --needed --noconfirm neovim btop fastfetch viu lsof nmap openbsd-netcat proxychains-ng speedtest-cli usbutils tailscale fwupd github-cli
+
+# Desenvolvimento
+sudo pacman -S --needed --noconfirm docker docker-compose nodejs npm pnpm mysql-workbench
+
+# Aplicativos e desktop
+sudo pacman -S --needed --noconfirm xorg-xhost hypridle hyprlock qbittorrent telegram-desktop discord flatpak bluez-obex nwg-look vlc vlc-plugins-all scrcpy kdenlive kamoso foliate zenity
 
 # Pacotes do AUR (Yay)
-yay -S steam-devices-git brave-bin antigravity-ide ventoy-bin onlyoffice-bin --noconfirm
+yay -S --needed --noconfirm steam-devices-git brave-bin ventoy-bin onlyoffice-bin visual-studio-code-bin pgadmin4-bin anydesk-bin localsend-bin upscayl-ncnn z-library-bin sunshine-bin wifi-qr timeshift-autosnap gnome-network-displays
 
 # Flatpak (PortProton)
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
@@ -45,5 +56,3 @@ O `rm` é preciso porque o dots-hyprland já cria templates em `custom/` no prim
 | `rules.lua`     | Regras de janela                                                            |
 | `variables.lua` | Variáveis do Hyprland                                                       |
 | `hypridle.conf` | Idle/energia (lock 29 min, dpms off 30 min, suspend 40 min)                 |
-
-Para sincronizar o tema do SDDM com o wallpaper atual, a máquina local mantém `~/.config/hypr/custom/scripts/sync-sddm-theme.sh` (não versionado).

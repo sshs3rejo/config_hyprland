@@ -1,0 +1,2 @@
+-- User configuration overrides
+-- Loaded after ~/.config/hypr/hyprland/execs.lua

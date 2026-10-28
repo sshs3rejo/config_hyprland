@@ -43,6 +43,20 @@ O `rm` é preciso porque o dots-hyprland já cria templates em `custom/` no prim
 
 Depois do clone, defina o layout do teclado em **Configurações → Hyprland → Input → Keyboard** (`br`). O end4-pC grava o layout em `~/.config/hypr/hyprland/shellOverrides/main.lua`, que carrega depois de `custom/` e por isso tem precedência. O `custom/general.lua` mantém apenas `kb_variant = thinkpad` e `kb_model = abnt2`, que a GUI não cobre (modelo) ou não persiste sem edição manual (variante).
 
+## Timeshift (backup)
+
+O sistema usa Timeshift em modo BTRFS no `/dev/sda2`, com snapshots de `@` e `@home`, agendamento diário + boot e `timeshift-autosnap` criando um snapshot antes de cada upgrade do pacman (mantém os 3 últimos, com intervalo mínimo de 18h).
+
+Os snapshots aparecem no GRUB via `grub-btrfs` no submenu **Arch Linux snapshots**. Como `/boot` é uma partição separada (vfat), o kernel e o initramfs **não** entram no snapshot: ao iniciar um snapshot antigo, o GRUB usa o kernel/initramfs atuais de `/boot`. Isso normalmente inicia sem problema, mas após uma atualização de kernel um snapshot antigo pode ficar com os módulos incompatíveis com o kernel em uso.
+
+```bash
+# Criar snapshot manual
+pkexec timeshift --create --comments "manual"
+
+# Listar snapshots
+pkexec timeshift --list
+```
+
 ## Estrutura
 
 | Arquivo         | Propósito                                                                   |

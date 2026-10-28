@@ -25,11 +25,7 @@ sudo pacman -S --needed --noconfirm docker docker-compose nodejs npm pnpm mysql-
 sudo pacman -S --needed --noconfirm xorg-xhost hypridle hyprlock qbittorrent telegram-desktop discord flatpak bluez-obex nwg-look vlc vlc-plugins-all scrcpy kdenlive kamoso foliate zenity
 
 # Pacotes do AUR (Yay)
-yay -S --needed --noconfirm steam-devices-git brave-bin ventoy-bin onlyoffice-bin visual-studio-code-bin pgadmin4-bin anydesk-bin localsend-bin upscayl-ncnn z-library-bin sunshine-bin wifi-qr timeshift-autosnap gnome-network-displays
-
-# Flatpak (PortProton)
-flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
-flatpak install flathub ru.linux_gaming.PortProton -y
+yay -S --needed --noconfirm steam-devices-git zen-browser-bin ventoy-bin onlyoffice-bin visual-studio-code-bin pgadmin4-bin anydesk-bin localsend-bin upscayl-ncnn z-library-bin sunshine-bin wifi-qr timeshift-autosnap gnome-network-displays portproton
 ```
 
 > O `xorg-xhost` é necessário para o `xhost +local:root` executado no startup.
@@ -45,12 +41,14 @@ cp -i custom/hypridle.conf hypridle.conf
 
 O `rm` é preciso porque o dots-hyprland já cria templates em `custom/` no primeiro boot. O `hypridle.conf` não tem mecanismo de override, por isso é copiado manualmente após o clone (mantém os timeouts personalizados de bloqueio/tela/suspensão).
 
+Depois do clone, defina o layout do teclado em **Configurações → Hyprland → Input → Keyboard** (`br`). O end4-pC grava o layout em `~/.config/hypr/hyprland/shellOverrides/main.lua`, que carrega depois de `custom/` e por isso tem precedência. O `custom/general.lua` mantém apenas `kb_variant = thinkpad` e `kb_model = abnt2`, que a GUI não cobre (modelo) ou não persiste sem edição manual (variante).
+
 ## Estrutura
 
 | Arquivo         | Propósito                                                                   |
 | --------------- | --------------------------------------------------------------------------- |
-| `general.lua`   | Input: teclado br/thinkpad/abnt2, mouse e touchpad                          |
-| `keybinds.lua`  | Keybinds próprios (inclui `CTRL+SUPER+ALT+/` para editar este arquivo)      |
+| `general.lua`   | Input: variante/modelo do teclado (`thinkpad`/`abnt2`), mouse e touchpad     |
+| `keybinds.lua`  | Keybinds próprios (`CTRL+SUPER+ALT+/` edita o arquivo; `SUPER+Esc` abre as configurações) |
 | `execs.lua` | Comandos de inicialização (`xhost +local:root` p/ apps GTK/XWayland) |
 | `env.lua`       | Variáveis de ambiente                                                       |
 | `rules.lua`     | Regras de janela                                                            |

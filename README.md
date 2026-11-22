@@ -4,6 +4,8 @@ Personalizações do meu ambiente [dots-hyprland](https://github.com/end-4/dots-
 
 O conteúdo deste repositório **é** o diretório `~/.config/hypr/custom`: a base (`~/.config/hypr/hyprland/`) é gerenciada pelo dots-hyprland e não deve ser versionada aqui, pois é sobrescrita a cada atualização do upstream. Os arquivos em `custom/` são carregados depois da base e nunca são sobrescritos — o serviço `create_custom_config.lua` só cria os templates que estiverem ausentes.
 
+> Migração para CachyOS (Limine, Snapper, home e apps): [CACHYOS.md](CACHYOS.md).
+
 ## Pré-requisitos
 
 1. Instalar o [dots-hyprland](https://github.com/end-4/dots-hyprland) primeiro (ele fornece a base em `~/.config/hypr/hyprland/`).

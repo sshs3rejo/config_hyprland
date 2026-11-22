@@ -15,6 +15,27 @@ customizações deste repo. O kit de restauração complementa este documento.
 O `restore.sh` do kit filtra `linux-zen`, `grub`, `grub-btrfs`, `timeshift` e
 `timeshift-autosnap` para não conflitar com a base do CachyOS.
 
+## Partição (opção A: diskpart + Windows primeiro)
+
+No instalador do Windows 10, `Shift+F10`:
+
+```
+diskpart
+list disk
+select disk 0
+clean
+convert gpt
+create partition efi size=4096
+format quick fs=fat32 label="ESP"
+create partition msr size=16
+exit
+```
+
+Instale o Windows no espaço não alocado. Depois, com BitLocker e Fast Startup
+desligados (`powercfg /h off`), reduza o `C:` para ~140 GiB no Gerenciamento de
+Disco. No Calamares, monte a ESP de 4 GiB em `/boot` **sem formatar** e crie o
+btrfs no espaço livre. Bootloader: Limine.
+
 ## Snapper: incluir a home
 
 O instalador do CachyOS configura o Snapper só para `@`. A home (`@home`) fica
